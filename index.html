@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Өмірбек + Меруерт Беташар</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Noto Serif', serif;
+      background: url('https://avatars.mds.yandex.net/i?id=ab4f6ec3b9ae2570334a20c40298e5a2_l-8209926-images-thumbs&n=13') no-repeat center center fixed;
+      background-size: cover;
+      color: #3d2c1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 90%;
+      margin: 20px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      display: none;
+      text-align: center;
+    }
+
+    .container.active {
+      display: block;
+    }
+
+    .title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #a9742a;
+      margin-top: 10px;
+    }
+
+    .intro-image {
+      width: 100%;
+      max-width: 320px;
+      margin: 20px auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .audio-button-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin: 30px auto;
+      border-radius: 50%;
+      background: #ffddf0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .photo-button {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .photo-button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .nav-buttons button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff66b2;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      min-width: 120px;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #cc0066;
+    }
+
+    .text-block {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 1.3em;
+      line-height: 1.6;
+    }
+
+    .gis-button-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .gis-button {
+      display: inline-block;
+      width: 92px;
+      height: 92px;
+      background-image: url('https://optim.tildacdn.pro/tild3630-6232-4566-b064-616130656130/-/cover/92x92/center/center/-/format/webp/unnamed.png');
+      background-size: cover;
+      border-radius: 12px;
+    }
+
+    .calendar-block {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .calendar-block h2 {
+      color: #a9742a;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2em;
+    }
+
+    .calendar table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .calendar th, .calendar td {
+      padding: 10px;
+      border: 1px solid #eee;
+      width: 14.28%;
+      text-align: center;
+    }
+
+    .calendar th {
+      background-color: #ffca28;
+    }
+
+    .calendar .highlight {
+      background: #ffe082;
+      font-weight: bold;
+      color: #000;
+      border: 2px solid #ffca28;
+    }
+
+    .timer {
+      font-size: 1.2em;
+      margin: 20px 0;
+      color: #880044;
+      font-weight: bold;
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 2em;
+      }
+      .nav-buttons {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  </style>
+</head>
+<body>
+     <div class="container active" id="page1">
+    <h1 class="title">Өмірбек + Меруерт</h1>
+        <img class="intro-image" src="https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6751469236574a3f99e48092_675146b0f5e1b61267080635/scale_1200" alt="Intro Image">
+    <div class="audio-button-wrapper" onclick="toggleAudio()">
+      <div class="photo-button">
+        <img src="https://optim.tildacdn.pro/tild6132-6638-4764-b632-623263306137/-/cover/120x120/center/center/-/format/webp/pngegg_3.png" alt="Музыка">
+      </div>
+    </div>
+    <audio id="myAudio" src="waf2em.mp3"></audio>
+    <div class="nav-buttons">
+      <span></span>
+      <button onclick="goToPage(2)">Келесі бет</button>
+    </div>
+  </div>
+
+  <div class="container" id="page2">
+    <div class="text-block">
+      Құрметті ағайын-туыс, құда-жекжат, дос-жаран!<br>
+      Сіздерді әулетімізде болатын <strong>беташар тойына</strong>
+      арналған ақ дастарханның қонағы болуға шақырамыз!<br>
+      Бұл қуанышты сәтте сіздердің қатысуларыңыз біз үшін үлкен мәртебе.
+    </div>
+    <div class="text-block">
+      Құрметпен,<br>
+      Той иелері: <strong>Бекбосын мен Зоя</strong>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="goToPage(1)">Артқа</button>
+      <button onclick="goToPage(3)">Келесі бет</button>
+    </div>
+  </div>
+
+  <div class="container" id="page3">
+    <div class="calendar-block">
+      <h2>Күнтізбе</h2>
+      <div class="calendar">
+        <table>
+          <thead>
+            <tr>
+              <th>Дс</th><th>Сс</th><th>Ср</th><th>Бс</th><th>Жм</th><th>Сн</th><th>Жк</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+            <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+            <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+            <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+            <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td class="highlight">29</td><td>30</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="timer" id="countdown"></div>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="goToPage(2)">Артқа</button>
+      <button onclick="goToPage(4)">Келесі бет</button>
+    </div>
+  </div>
+
+  <div class="container" id="page4">
+    <div class="text-block">
+      <p>Той болатын күні: <strong>29-ыншы маусым 2025ж</strong></p>
+      <p>Той басталу уақыты: <strong>12:00 - де</strong></p>
+      <p>Мекен-жайымыз:<br> Қарағанды қаласы, <br><strong>Гапеева көшесі жилмассив 1, 11 үй</strong></p>
+    </div>
+    <div class="gis-button-container">
+      <a class="gis-button" href="https://go.2gis.com/YuYiL" target="_blank" aria-label="2ГИС карта" role="img"></a>
+    </div>
+    <div class="nav-buttons">
+      <button onclick="goToPage(3)">Артқа</button>
+      <span></span>
+    </div>
+  </div>
+
+  <script>
+    function goToPage(pageNumber) {
+      document.querySelectorAll('.container').forEach(container => {
+        container.classList.remove('active');
+      });
+      const selected = document.getElementById(`page${pageNumber}`);
+      if (selected) selected.classList.add('active');
+    }
+
+    function toggleAudio() {
+      const audio = document.getElementById('myAudio');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+    // Таймер обратного отсчета до 10 августа 2025 13:00
+    const countdown = document.getElementById("countdown");
+    const eventDate = new Date("2025-06-29T12:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance <= 0) {
+        countdown.innerHTML = "Той басталды!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `Қалған уақыт: ${days} күн, ${hours} сағат, ${minutes} минут, ${seconds} секунд`;
+    }, 1000);
+  </script>
+</body>
+</html>
